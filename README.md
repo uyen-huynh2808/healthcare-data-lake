@@ -4,12 +4,26 @@ This project builds a **real-time healthcare data lake and analytics platform** 
 
 ## Project Goals
 
-- Ingest real-time vitals from simulated IoT patient devices
-- Stream and process data with Spark Structured Streaming
-- Store data in Delta Lake using Bronze, Silver, and Gold architecture
-- Load cleaned and aggregated data into BigQuery
-- Visualize patient health metrics and anomalies with Looker/Tableau
-- Integrate ML models to detect abnormal vitals in real-time
+- **Ingest real-time vitals from simulated IoT patient devices**  
+  Simulate wearable health devices (e.g., smartwatches, biometric sensors) that generate live vital signs like heart rate, temperature, SpO₂, respiration rate, and blood pressure. Stream this data into the system via Apache Kafka to replicate a real hospital environment.
+
+- **Stream and process data with Spark Structured Streaming**  
+  Use Apache Spark to process incoming Kafka streams in real time. Apply schema enforcement, data cleansing, timestamp alignment, and enrich the data for downstream analysis.
+
+- **Store data in Delta Lake using Bronze, Silver, and Gold architecture**  
+  Build a multi-layered Delta Lake architecture:  
+  - **Bronze**: Raw Kafka ingestion  
+  - **Silver**: Cleaned and structured data with derived fields  
+  - **Gold**: Aggregated patient metrics and anomaly flags ready for reporting
+
+- **Load cleaned and aggregated data into BigQuery**  
+  Use scheduled or streaming data loads to push curated data from the Gold layer to Google BigQuery for scalable and serverless analytics.
+
+- **Visualize patient health metrics and anomalies with Looker**  
+  Develop interactive dashboards to monitor individual patient vitals, detect high-risk cases, and analyze hospital-wide trends using visualization tools like Looker Studio or Tableau.
+
+- **Integrate ML models to detect abnormal vitals in real-time**  
+  Train and deploy anomaly detection models (e.g., Isolation Forest, LSTM) to identify outliers in vital sign patterns. Embed these models in the streaming pipeline to score events and generate real-time alerts for clinicians.
 
 ## Architecture
 

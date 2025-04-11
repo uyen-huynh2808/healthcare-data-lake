@@ -48,8 +48,8 @@ IoT Devices (Simulated) → Kafka (patient-vitals topic)
 | Streaming	| Apache Spark (Structured Streaming)
 | Storage	| Delta Lake (Parquet + Transaction Logs)
 | Query Layer	| Google BigQuery
-| Visualization	| Looker Studio
 | ML / Anomaly Detection	| PySpark MLlib, scikit-learn, MLflow
+| Visualization	| Looker Studio
 | Orchestration	| Apache Airflow (for scheduled loads)
 
 ## Data Used

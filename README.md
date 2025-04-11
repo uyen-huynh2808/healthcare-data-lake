@@ -100,14 +100,13 @@ The data is streamed to a Kafka topic (patient-vitals) and ingested using Spark 
 - Output score to Gold Delta table and dashboard
 
 ## Project Files
-1. `data_simulator` - Python scripts to simulate patient IoT data
-2. `kafka_producer.py` - Sends vitals JSON messages to Kafka
-3. `spark_streaming_job.py` - Spark job to process and write to Delta Lake
-4. `delta_lake_setup/` -	Scripts to define schema and layers (Bronze/Silver/Gold)
-5. `ml_model_training.ipynb` -	Training anomaly detection model on simulated data
-6. `ml_inference_stream.py` -	Applies trained model in streaming job to score anomalies
-7. `bigquery_loader.py` -	Transfers Gold table to BigQuery
-8. `dashboards/` -	Dashboard JSON templates 
-9. `requirements.txt` -	Project dependencies
+1. `data_simulator/` – Python scripts to simulate patient IoT data  
+2. `kafka_producer.py` – Sends vitals JSON messages to Kafka
+3. `delta_lake_setup/` – Scripts to define schema and Delta Lake layers (Bronze/Silver/Gold)  
+4. `spark_streaming_job.py` – Spark job to process and write streaming data to Delta Lake
+5. `ml_model_training.ipynb` – Train anomaly detection model on simulated data  
+6. `ml_inference_stream.py` – Applies trained model to streaming pipeline for real-time scoring
+7. `bigquery_loader.py` – Transfers Gold-layer data to BigQuery  
+8. `dashboards/` – Dashboard templates 
 
 ---

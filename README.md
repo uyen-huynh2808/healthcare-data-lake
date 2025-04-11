@@ -36,7 +36,7 @@ IoT Devices (Simulated) → Kafka (patient-vitals topic)
 | Query Layer	| Google BigQuery
 | Visualization	| Looker Studio / Tableau
 | ML / Anomaly Detection	| PySpark MLlib, scikit-learn, MLflow
-| Orchestration (optional)	| Apache Airflow (for scheduled loads)
+| Orchestration	| Apache Airflow (for scheduled loads)
 
 ## Data Used
 This project uses simulated patient health data generated in real-time using Python scripts. Each simulated IoT device (representing a patient) emits health vitals every few seconds in JSON format, including:

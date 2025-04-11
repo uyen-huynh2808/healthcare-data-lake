@@ -1,6 +1,6 @@
 # Healthcare Data Lake for Real-Time Analytics (IoT Patient Monitoring)
 
-This project builds a real-time data lake and analytics platform to monitor patient health using IoT wearable devices. It enables hospitals and clinics to perform real-time anomaly detection, alerting, and long-term trend analysis.
+This project builds a **real-time healthcare data lake and analytics platform** for monitoring patient vitals from simulated **IoT wearable devices**. Vital signs like heart rate, temperature, and SpO₂ are streamed via **Apache Kafka**, processed in real time using **Spark Structured Streaming**, and stored in **Delta Lake** using a Bronze–Silver–Gold architecture. Cleaned and aggregated data is loaded into **BigQuery** for analysis and visualized using **Looker**. An **anomaly detection ML model** is integrated to identify abnormal vitals in real time, simulating how healthcare providers can respond to emergencies and monitor patient health at scale.
 
 ## Project Goals
 
@@ -34,19 +34,19 @@ IoT Devices (Simulated) → Kafka (patient-vitals topic)
 | Streaming	| Apache Spark (Structured Streaming)
 | Storage	| Delta Lake (Parquet + Transaction Logs)
 | Query Layer	| Google BigQuery
-| Visualization	| Looker Studio / Tableau
+| Visualization	| Looker Studio
 | ML / Anomaly Detection	| PySpark MLlib, scikit-learn, MLflow
 | Orchestration	| Apache Airflow (for scheduled loads)
 
 ## Data Used
 This project uses simulated patient health data generated in real-time using Python scripts. Each simulated IoT device (representing a patient) emits health vitals every few seconds in JSON format, including:
-- patient_id: unique identifier
-- timestamp: ISO8601 format
-- heart_rate: integer
-- temperature: float
-- spo2: float (oxygen level)
-- respiration_rate: integer
-- blood_pressure: systolic/diastolic (either as string or two fields)
+- `patient_id`: unique identifier
+- `timestamp`: ISO8601 format
+- `heart_rate`: integer
+- `temperature`: float
+- `spo2`: float (oxygen level)
+- `respiration_rate`: integer
+- `blood_pressure`: systolic/diastolic (either as string or two fields)
 The data is streamed to a Kafka topic (patient-vitals) and ingested using Spark Streaming.
 
 ## Data Model

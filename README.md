@@ -65,12 +65,15 @@ The data is streamed to a Kafka topic (patient-vitals) and ingested using Spark 
 
 ## Data Model
 **Delta Lake Tables**
+
 `bronze_patient_vitals`
 - Raw data ingested from Kafka
 - Schema: unvalidated, JSON
+
 `silver_patient_vitals`
 - Cleaned and parsed records
 - Derived fields and simple alert flags
+
 `gold_patient_summary`
 - Aggregated vitals per patient
 - Includes real-time anomaly detection score

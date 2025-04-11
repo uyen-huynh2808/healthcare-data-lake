@@ -88,10 +88,12 @@ The data is streamed to a Kafka topic (patient-vitals) and ingested using Spark 
  
 ## ML Model
 **Goal:** Detect abnormal health patterns using unsupervised learning
+
 **Options:**
 - Isolation Forest
 - AutoEncoder
 - LSTM (if time series needed)
+
 **Pipeline:**
 - Train model on historical data
 - Serve model in Spark Streaming for real-time scoring

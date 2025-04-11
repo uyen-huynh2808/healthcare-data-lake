@@ -2,8 +2,6 @@
 
 This project builds a real-time data lake and analytics platform to monitor patient health using IoT wearable devices. It enables hospitals and clinics to perform real-time anomaly detection, alerting, and long-term trend analysis.
 
----
-
 ## Project Goals
 
 - Ingest real-time vitals from simulated IoT patient devices
@@ -53,13 +51,13 @@ The data is streamed to a Kafka topic (patient-vitals) and ingested using Spark 
 
 ## Data Model
 **Delta Lake Tables**
-'bronze_patient_vitals'
+`bronze_patient_vitals`
 - Raw data ingested from Kafka
 - Schema: unvalidated, JSON
-'silver_patient_vitals'
+`silver_patient_vitals`
 - Cleaned and parsed records
 - Derived fields and simple alert flags
-'gold_patient_summary'
+`gold_patient_summary`
 - Aggregated vitals per patient
 - Includes real-time anomaly detection score
 - Partitioned by date and patient_id
@@ -67,9 +65,9 @@ The data is streamed to a Kafka topic (patient-vitals) and ingested using Spark 
 **BigQuery Tables**
 - Mirrors gold_patient_summary
 - Additional views:
-  - 'patient_risk_scores'
-  - 'ward_alert_counts'
-  - 'vital_signs_hourly_trend'
+  - `patient_risk_scores`
+  - `ward_alert_counts`
+  - `vital_signs_hourly_trend`
  
 ## ML Model
 **Goal:** Detect abnormal health patterns using unsupervised learning
@@ -83,14 +81,14 @@ The data is streamed to a Kafka topic (patient-vitals) and ingested using Spark 
 - Output score to Gold Delta table and dashboard
 
 ## Project Files
-1. 'data_simulator' - Python scripts to simulate patient IoT data
-2. 'kafka_producer.py' - Sends vitals JSON messages to Kafka
-3. 'spark_streaming_job.py' - Spark job to process and write to Delta Lake
-4. 'delta_lake_setup/' -	Scripts to define schema and layers (Bronze/Silver/Gold)
-5. 'ml_model_training.ipynb' -	Training anomaly detection model on simulated data
-6. 'ml_inference_stream.py' -	Applies trained model in streaming job to score anomalies
-7. 'bigquery_loader.py- -	Transfers Gold table to BigQuery
-8. 'dashboards/' -	Dashboard JSON templates 
-9. 'requirements.txt' -	Project dependencies
+1. `data_simulator` - Python scripts to simulate patient IoT data
+2. `kafka_producer.py` - Sends vitals JSON messages to Kafka
+3. `spark_streaming_job.py` - Spark job to process and write to Delta Lake
+4. `delta_lake_setup/` -	Scripts to define schema and layers (Bronze/Silver/Gold)
+5. `ml_model_training.ipynb` -	Training anomaly detection model on simulated data
+6. `ml_inference_stream.py` -	Applies trained model in streaming job to score anomalies
+7. `bigquery_loader.py` -	Transfers Gold table to BigQuery
+8. `dashboards/` -	Dashboard JSON templates 
+9. `requirements.txt` -	Project dependencies
 
 ---

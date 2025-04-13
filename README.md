@@ -1,4 +1,4 @@
-# Healthcare Data Lake for Real-Time Analytics (IoT Patient Monitoring)
+# (Uncompleted) Healthcare Data Lake for Real-Time Analytics (IoT Patient Monitoring)
 
 This project builds a **real-time healthcare data lake and analytics platform** for monitoring patient vitals from simulated **IoT wearable devices**. Vital signs like heart rate, temperature, and SpO₂ are streamed via **Apache Kafka**, processed in real time using **Spark Structured Streaming**, and stored in **Delta Lake** using a Bronze–Silver–Gold architecture. Cleaned and aggregated data is loaded into **BigQuery** for analysis and visualized using **Looker**. An **anomaly detection ML model** is integrated to identify abnormal vitals in real time, simulating how healthcare providers can respond to emergencies and monitor patient health at scale.
 

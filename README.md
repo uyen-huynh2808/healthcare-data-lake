@@ -43,7 +43,7 @@ ML Inference    Looker/Tableau Dashboards
 
 | Layer                   | Tools/Technologies                                         |
 |------------------------|------------------------------------------------------------|
-| Data Simulation         | Python (Faker, NumPy, JSON)                                |
+| Data Simulation         | Python (Faker, NumPy, JSON) / GEN AI                             |
 | Ingestion               | Apache Kafka                                               |
 | Streaming               | Apache Spark (Structured Streaming)                        |
 | Storage                 | Delta Lake (Parquet + Transaction Logs)                    |
